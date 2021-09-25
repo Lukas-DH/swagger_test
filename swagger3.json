@@ -1,0 +1,43 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My restos project CRUD",
+    "description": "user project API description in Markdown.",
+    "version": "1.0.0"
+  },
+  "host": "localhost/4000",
+  "basePath": "/",
+  "schemes": "http",
+  "paths": {
+    "/restaurants": {
+      "get": {
+        "tags": ["restos"],
+        "summary": "Returns a list of restos.",
+        "description": "Optional extended description in Markdown.",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/retaurant"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Restaurant": {
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
