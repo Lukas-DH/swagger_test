@@ -10,9 +10,13 @@ var restaurants = [
 const app = express();
 app.use(express.json());
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(
+  "164.90.221.164:3000/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+);
 
-app.get("/restaurants", (req, res) => {
+app.get("164.90.221.164:3000/restaurants", (req, res) => {
   res.send(restaurants);
 });
 app.post("/restaurant", (req, res) => {
